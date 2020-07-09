@@ -1,9 +1,3 @@
-/*
- * Michelle Li
- * Period 8 
- * This program represents a client that can connect to a paint server with multiple other clients and paint on the same canvas.
- */
-
 import java.io.*;
 import java.net.*;
 import javax.swing.*;
@@ -29,7 +23,6 @@ public class PaintClient extends JFrame implements ActionListener
 
 	private final String IP_ADDRESS ="192.168.1.192";
 
-	// the GUI is provided for you
 	public PaintClient(){
 
 		setLayout(null);
@@ -223,18 +216,15 @@ public class PaintClient extends JFrame implements ActionListener
 		//and sends the point to the server
 		public void mouseDragged(MouseEvent mouse) {
 
-			/** your code goes here */
 			points.add(new Point(mouse.getX(),mouse.getY(), me.color, currentSize));
 			this.repaint();
 			writer.println(mouse.getX()+" "+mouse.getY()+" "+me.color.getRed()+" "+me.color.getGreen()+" "+me.color.getBlue()+" "+currentSize);
 			writer.flush();
 		}
 
-		//not used for this project
 		public void mouseMoved(MouseEvent e) {}
 	}
 
-	//Do not edit this class
 	public class Point{
 
 		private int xLoc;
@@ -254,7 +244,6 @@ public class PaintClient extends JFrame implements ActionListener
 		}
 	}
 
-	//this class is used to help color code the friends list. Do not edit this class.
 	public class Person{
 		private String name;
 		private Color color;
@@ -280,8 +269,6 @@ public class PaintClient extends JFrame implements ActionListener
 		}
 	}
 
-	//this class color codes the JList
-	//uses the arraylist of friends.  Do not edit this class
 	public class RowRenderer extends DefaultListCellRenderer{
 
 		public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {

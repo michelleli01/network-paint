@@ -1,9 +1,3 @@
-/*
- * Michelle Li
- * Period 8
- * This class is the server that multiple clients can connect to in order to paint together.
- */
-
 import java.io.*;
 import java.net.*;
 import java.util.*;
